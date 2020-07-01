@@ -1,0 +1,25 @@
+﻿@model IEnumerable<DAL.Models.TaskItem>
+
+@{
+
+    ViewData["Title"] = "عدم دسترسی";
+}
+
+
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-header text-center">
+            <span class="">
+               @User.Identity.Name
+                <span class="badge bg-aqua">
+                </span>
+            </span>
+        </h3>
+        <hr />
+        
+       
+    </div>
+    <div class="box-body">
+       <p class="text-red text-center">حساب کاربری شما به این بخش مجوز دسترسی ندارد !</p>
+    </div>
+</div>

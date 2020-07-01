@@ -1,0 +1,43 @@
+﻿@model DAL.Models.SubTask
+
+@{
+    ViewData["Title"] = $"افزودن ساب تسک";
+}
+
+
+ <div class="box box-primary">
+    <div class="box-header">
+<h3 class="box-header text-center">
+    <span class="btn btn-warning"> @ViewData["Title"]
+    </span>
+    </h3>
+    <hr />
+   </div>
+    <div class="box-body">
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddSubTask">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TaskItemId" value="@ViewBag.TaskItemId" />
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="btn btn-success  btn-block" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+    </div>
+<div>
+    <a class="btn btn-danger" asp-action="GetSubTasks" asp-route-TaskItemId="@ViewBag.TaskItemId"> بازگشت به لیست </a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,39 @@
+﻿@using Panel
+@if (User.Identity.IsAuthenticated)
+{
+
+
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+        <div class="profile">
+            <hr />
+            <p class="info">  @User.Identity.Name     </p>
+        </div>
+
+
+    </div>
+
+    <ul class="sidebar-menu direction">
+        <li class="header">منو اصلی</li>
+        <li class="treeview">
+            <a href="~/Adminpanel/#">
+                <i class="fas fa-users"></i> <span>  منو</span> <i class="fa fa-angle-left pull-right"></i>
+            </a>
+
+            <ul class="treeview">
+                <li><a asp-controller="Home" asp-action="GetTasks"><i class="fas fa-user"></i>   لیست تسک ها  </a></li>
+
+            </ul>
+
+            
+            <ul class="treeview-menu">
+                <li><a asp-action="logout" asp-controller="auth"> <i class="fas fa-signout"></i>خروج</a>    </li>
+            </ul>
+        </li>
+
+    </ul>
+}
+
+
+
+

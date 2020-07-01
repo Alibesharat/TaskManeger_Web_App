@@ -1,0 +1,122 @@
+﻿
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> @ViewData["title"] </title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="~/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="~/plugins/Fontawsome/all.css" rel="stylesheet" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="~/dist/css/AlphaCoreStyle.css?v4">
+  
+    <style>
+        * {
+            direction: rtl;
+        }
+
+        .table-responsive .table {
+            max-width: none;
+            -webkit-overflow-scrolling: touch !important;
+        }
+    </style>
+    @RenderSection("Styles", false)
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="~/plugins/IESuport/html5shiv.min.js"></script>
+        <script src="~/plugins/IESuport/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body class="hold-transition skin-purple sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>  </b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>پنل</b>مدیریت </span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="~/Adminpanel/#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <i class="fa fa-list"></i>
+                </a>
+                <!-- Navbar Right Menu -->
+
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                @await Component.InvokeAsync("Header")
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+
+        <div class="content-wrapper">
+
+            <!-- Content Header (Page header) -->
+            <!-- Main content -->
+            <section class="content">
+
+                @RenderBody()
+            </section>
+            <!-- /.content -->
+        </div>
+
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>  &copy;  @DateTime.Now.Year  <a href="#">   </a> </b>
+            </div>
+
+        </footer>
+        <!-- Control Sidebar -->
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+        <!-- Modal structure -->
+       
+    </div>
+
+    <!-- jQuery 2.2.0 -->
+    <script src="~/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="~/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <!-- AdminLTE App -->
+    <script src="~/dist/js/app.min.js"></script>
+   
+
+  
+    
+
+    
+    @**Set Active path**@
+    <script>
+        var route = window.location.pathname;
+        var current = $("[href='" + route + "']")
+        current.css("color", "white");
+        current.parent().parent().parent().addClass('active');
+    </script>
+
+   
+    @RenderSection("Scripts", false)
+</body>
+</html>
+
